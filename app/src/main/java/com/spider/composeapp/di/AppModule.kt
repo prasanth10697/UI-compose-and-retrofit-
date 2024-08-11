@@ -1,9 +1,9 @@
 package com.spider.composeapp.di
 
 import com.spider.composeapp.data.api.ApiService
-import com.spider.composeapp.data.datasource.NewsDataSource
-import com.spider.composeapp.data.datasource.NewsDataSourceImpl
-import com.spider.composeapp.repository.NewsRepository
+import com.spider.composeapp.data.datasource.UserDataSource
+import com.spider.composeapp.data.datasource.UserDataSourceImpl
+import com.spider.composeapp.repository.UserRepository
 import com.spider.composeapp.util.AppConstants
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -55,14 +55,14 @@ class AppModule {
 
     @Singleton
     @Provides
-    fun providerNewsDataSource(apiService: ApiService):NewsDataSource{
-        return NewsDataSourceImpl(apiService)
+    fun providerNewsDataSource(apiService: ApiService):UserDataSource{
+        return UserDataSourceImpl(apiService)
     }
 
     @Singleton
     @Provides
-    fun providerNewsRepository(newsDataSource: NewsDataSource):NewsRepository{
-        return NewsRepository(newsDataSource)
+    fun providerNewsRepository(newsDataSource: UserDataSource):UserRepository{
+        return UserRepository(newsDataSource)
     }
 
 }
